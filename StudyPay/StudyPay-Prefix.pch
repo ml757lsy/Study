@@ -1,0 +1,44 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+//设备相关
+//判断是否时Pad
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//判断是IPHONE 5
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//判断系统版本是7或以后
+#define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+//快捷相关
+//添加起始图片
+#define NOMAL_IMAG(b,x) [b setBackgroundImage:[UIImage imageNamed:x] forState:UIControlStateNormal]
+//选中时图片
+#define SELECT_IMAG(b,x)  [b setBackgroundImage:[UIImage imageNamed:x] forState:UIControlStateNormal]
+//定义屏幕的宽度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+//定义屏幕的高度
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+// 账户信息
+#define DWACCOUNT_USERID                  @"B21C8E6C9A6E7CD1"
+#define DWACCOUNT_APIKEY                  @"b2BGKJj8ZHHslFRtrwQHpySnPyaHRxg6"
+
+#define DWACCOUNT_USERID_FREE             @"F1135F980802D08E"
+#define DWACCOUNT_APIKEY_FREE             @"8uqG5E1iHg1opwYJNXCa4RIDhZ7WHhTe"
+
+
+
+
